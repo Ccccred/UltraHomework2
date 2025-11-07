@@ -3,27 +3,22 @@
 //刘栩池
 #include<stdio.h>
 int main(){
-int num=1,m=1;//n表示密码,m=1表示真，m=0表示假,这里一定要先默认m=1
-printf("请输入你的密码(50以内的整数)：");
-scanf("%d",& num);
-if(num==1){
-    m=0;
-}
-else{
-    for(int b=2 ; b<num ; b++)//相除的数从2开始，而不是从1开始
-    {if(num % b==0)//一定要用取余
-    {m=0;
-    break;}
+int arr[3][3];
+int i=0,j=0;
+for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+        scanf("%d",&arr[i][j]);
     }
 }
-    
-    if(m==0)
-    {
-        printf("密钥不安全，请重新输入");
+
+for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+        if(j ==0){
+        printf("%d",arr[i][j]);}
+        else
+        {printf(" %d",arr[i][j]);}
     }
-    else
-    {
-        printf("密钥安全，密码设置成功");
-    }
-    return 0;
+    printf("\n");
+}
+return 0;
 }
