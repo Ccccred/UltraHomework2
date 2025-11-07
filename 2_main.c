@@ -3,24 +3,22 @@
 //刘栩池
 #include<stdio.h>
 int main(){
-int num;
-int m=0;
-int a,b,c;
-for(num = 100;num < 1000; num++)
-{
-    a=num/100;
-    b=(num/10)%10;
-    c=num%10;
-    if(num==a*a*a+b*b*b+c*c*c)
-    {
-      if(m==0){
-        printf("%d",num);
-        m=1;
-      }
-      else{
-        printf(" %d",num);
-      }
+int arr[3][3];
+int i=0,j=0;
+for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+        scanf("%d",&arr[i][j]);
     }
+}
+
+for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+        if(j==0){//只能是列j，而不能是行i
+        printf("%d",arr[j][i]);}
+        else
+        {printf(" %d",arr[j][i]);}
+    }
+    printf("\n");
 }
 return 0;
 }
