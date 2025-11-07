@@ -2,24 +2,13 @@
 //3565530270@qq.com
 //刘栩池
 #include<stdio.h>
+int sum(int a1,int an,int step){//step表示公差
+    int n=(an-a1)/step+1;//表示有多少项
+    return n*(a1+an)/2;
+}
 int main(){
-int arr[5];
-int sum=0,i=0;
-printf("请输入4个数字：");
-while(i<4){
-    scanf("%d",&arr[i]);
-    sum+=arr[i];//等价于sum=sum+arr[i]
-    i++;
-}
-arr[4]=sum;//赋值
-for(i=0;i<=4;i++){
-    if(i==4){
-    printf("%d",sum);
-    }
-    else{
-        printf("%d ",arr[i]);
-    }
-}
-return 0;
+    int result=sum(1,100,1);//表示调用上面的行定义的函数
+    printf("%d",result);
+    return 0;
 }
 
