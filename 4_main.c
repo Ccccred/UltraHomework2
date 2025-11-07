@@ -2,23 +2,19 @@
 //3565530270@qq.com
 //刘栩池
 #include<stdio.h>
-int main(){
-int num=100;
-int m=0;//用于标记是否为第一个数
-while(num<1000){
-    int a=num/100;
-    int b=(num/10)%10;
-    int c=num%10;
-    if(num==a*a*a+b*b*b+c*c*c){
-        if(m==0){
-            printf("%d",num);
-            m=1;//标志以后的数都不是第一个数了
-        }
-        else{
-            printf(" %d",num);
-        }
+int power(int a,int b){
+    int result=1;
+    for(int i=0;i<b;i++){
+        result*=a;
     }
-    num++;//这个循环是while的，而不是if的，注意n++的是谁的循环
+    return result;
 }
+int main(){
+    int sum=0;
+    for(int i=1;i<=5;i++){
+        sum+=power(i,2);
+    }
+
+    printf("%d\n",sum);
 return 0;
 }
