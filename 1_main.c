@@ -3,22 +3,11 @@
 //刘栩池
 #include<stdio.h>
 int main(){
-int arr[3][3];
-int i=0,j=0;
-for(i=0;i<3;i++){
-    for(j=0;j<3;j++){
-        scanf("%d",&arr[i][j]);
-    }
-}
-
-for(i=0;i<3;i++){
-    for(j=0;j<3;j++){
-        if(j ==0){
-        printf("%d",arr[i][j]);}
-        else
-        {printf(" %d",arr[i][j]);}
-    }
-    printf("\n");
-}
-return 0;
+    int a;
+    int *p;//要地址用p,要值用*p
+    scanf("%d",&a);
+    p = &a;//这里不是a，而是&a
+    *p =*p+10;
+    printf("%d,%d",a,*p);
+    return 0;
 }
