@@ -2,13 +2,22 @@
 //3565530270@qq.com
 //刘栩池
 #include<stdio.h>
-int sum(int a1,int an,int step){//step表示公差
-    int n=(an-a1)/step+1;//表示有多少项
-    return n*(a1+an)/2;
+void shift(int *ptr_arr,int len){
+    for(int i=len -1;i>0;i--){
+       ptr_arr[i]=ptr_arr[i-1];
+    }
+    ptr_arr[0]=0;
 }
 int main(){
-    int result=sum(1,100,1);//表示调用上面的行定义的函数
-    printf("%d",result);
-    return 0;
+    int arr[5];
+    int len=5;
+    for(int i=0;i<len;i++){
+        scanf("%d",&arr[i]);
+    }
+    shift(arr,5);
+    for(int i=0;i<len;i++){
+    printf("%d ",arr[i]);
 }
+return 0;
 
+}
